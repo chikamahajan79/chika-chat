@@ -1,6 +1,3 @@
-# ==============================================================================
-# GitHub Actions Workflow: Build & Sign APK / AAB for "Chika"
-# ==============================================================================
 name: Build and Sign Chika Android APK & Bundle
 
 on:
@@ -26,17 +23,13 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.x'
+          flutter-version: '3.19.6'
           channel: 'stable'
           cache: true
 
-      - name: Install Dependencies
-        run: |
-          cd app
-          flutter pub get
-
       - name: Generate Release Keystore
         run: |
+          mkdir -p app/android/app
           keytool -genkeypair \
             -alias upload \
             -keyalg RSA \
@@ -55,6 +48,11 @@ jobs:
           keyAlias=upload
           storeFile=upload-keystore.jks
           EOF
+
+      - name: Install Dependencies
+        run: |
+          cd app
+          flutter pub get
 
       - name: Build Signed Release APK
         run: |
