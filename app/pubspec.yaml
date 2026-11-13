@@ -1,0 +1,43 @@
+name: chika
+description: "Chika - Private, end-to-end encrypted messaging with biometric authentication and zero-knowledge ephemeral relay."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Cryptography and E2EE
+  cryptography: ^2.7.0
+  libsignal_protocol_dart: ^0.6.0
+  flutter_secure_storage: ^9.0.0
+  # Biometric Security
+  local_auth: ^2.1.8
+  # Local Encrypted Database
+  sqflite_sqlcipher: ^3.0.0
+  path: ^1.8.3
+  # Networking & Realtime
+  web_socket_channel: ^2.4.0
+  http: ^1.2.0
+  # QR Code Contact Pairing
+  qr_flutter: ^4.1.0
+  mobile_scanner: ^3.5.6
+  # Media handling
+  image_picker: ^1.0.7
+  record: ^5.1.2
+  audioplayers: ^5.2.1
+  path_provider: ^2.1.2
+  uuid: ^4.3.3
+  intl: ^0.19.0
+  # State Management
+  provider: ^6.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
