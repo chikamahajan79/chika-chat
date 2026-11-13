@@ -14,13 +14,10 @@ subprojects {
 }
 
 subprojects {
-    afterEvaluate {
-        if (project.hasProperty("android")) {
-            val androidExt = project.extensions.findByName("android") as? com.android.build.gradle.BaseExtension
-            androidExt?.apply {
-                compileSdkVersion(35)
-                buildToolsVersion("35.0.0")
-            }
+    project.configurations.all {
+        resolutionStrategy {
+            force("androidx.core:core:1.13.1")
+            force("androidx.core:core-ktx:1.13.1")
         }
     }
 }
