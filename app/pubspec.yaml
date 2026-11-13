@@ -4,37 +4,37 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: '>=3.3.0 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
   # Cryptography and E2EE
   cryptography: ^2.7.0
-  libsignal_protocol_dart: ^0.6.0
+  libsignal_protocol_dart: ^0.6.5
   flutter_secure_storage: ^9.2.4
   # Biometric Security
   local_auth: ^2.3.0
   # Networking & Realtime
-  web_socket_channel: ^2.4.5
+  web_socket_channel: ^3.0.3
   http: ^1.2.2
   # QR Code Contact Pairing
   qr_flutter: ^4.1.0
-  mobile_scanner: ^3.5.7
+  mobile_scanner: ^5.2.3
   # Media handling
   image_picker: ^1.1.2
   record: ^5.2.0
-  audioplayers: ^6.0.0
+  audioplayers: ^6.1.1
   path_provider: ^2.1.4
-  uuid: ^4.3.3
+  uuid: ^4.5.1
   intl: ^0.19.0
   # State Management
-  provider: ^6.1.5+1
+  provider: ^6.1.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^4.0.0
 
 flutter:
   uses-material-design: true
