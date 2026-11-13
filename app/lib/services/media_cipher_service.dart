@@ -3,7 +3,7 @@ import 'dart:typed_data';
 import 'package:cryptography/cryptography.dart';
 
 class MediaCipherService {
-  final _algorithm = AesGcm.with256Bits();
+  final Cipher _algorithm = AesGcm.with256Bits();
 
   /// Generates a random 256-bit symmetric key for media encryption
   Future<SecretKey> generateMediaKey() async {
@@ -13,21 +13,19 @@ class MediaCipherService {
   /// Encrypts raw media bytes using AES-256-GCM
   /// Returns a map with ciphertext, nonce (IV), and MAC tag
   Future<Map<String, dynamic>> encryptMedia(Uint8List plainBytes, SecretKey key) async {
-    final nonce = _algorithm.newNonce();
     final secretBox = await _algorithm.encrypt(
       plainBytes,
       secretKey: key,
-      nonce: nonce,
     );
 
     final keyBytes = await key.extractBytes();
 
     return {
       'cipherText': secretBox.cipherText,
-      'nonce': nonce,
+      'nonce': secretBox.nonce,
       'mac': secretBox.mac.bytes,
       'keyHex': base64Encode(keyBytes),
-      'nonceHex': base64Encode(nonce),
+      'nonceHex': base64Encode(secretBox.nonce),
       'macHex': base64Encode(secretBox.mac.bytes),
     };
   }
