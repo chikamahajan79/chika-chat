@@ -24,7 +24,7 @@ class BiometricAuthService {
     try {
       final bool isAvailable = await isBiometricAvailable();
       if (!isAvailable) {
-        // If device has no biometrics, allow PIN fallback or pass
+        // Fallback or pass if device has no biometric hardware
         return true;
       }
 
@@ -32,7 +32,7 @@ class BiometricAuthService {
         localizedReason: reason,
         options: const AuthenticationOptions(
           stickyAuth: true,
-          biometricOnly: false, // Fallback to device PIN/Pattern
+          biometricOnly: false,
           useErrorDialogs: true,
         ),
       );
