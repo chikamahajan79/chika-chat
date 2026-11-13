@@ -22,4 +22,12 @@ plugins {
     id "org.jetbrains.kotlin.android" version "1.9.24" apply false
 }
 
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_PROJECT)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 include ":app"
