@@ -30,7 +30,7 @@ android {
 
     defaultConfig {
         applicationId "com.chetan.chika"
-        minSdkVersion 23
+        minSdkVersion 24 // Updated for Google Play Automatic Protection (Android 7.0+)
         targetSdkVersion 35
         versionCode flutter.versionCode
         versionName flutter.versionName
