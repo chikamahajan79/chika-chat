@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Chika</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: #fcfcfc;
+        }
+        h1 { color: #00A884; }
+        h2 { color: #111b21; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 32px; }
+        .meta { color: #64748b; font-size: 0.95em; margin-bottom: 24px; }
+        .highlight { background: #e6fffa; border-left: 4px solid #00A884; padding: 12px 16px; margin: 16px 0; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Privacy Policy for Chika</h1>
+    <div class="meta">
+        <strong>Application:</strong> Chika (com.chetan.chika)<br>
+        <strong>Developer:</strong> Chetan (chetan@chetan.co)<br>
+        <strong>Last Updated:</strong> November 2026
+    </div>
+
+    <div class="highlight">
+        <strong>Summary:</strong> Chika is a zero-knowledge, end-to-end encrypted messaging application. We do not collect, track, store, or sell your personal messages, contact lists, or media files.
+    </div>
+
+    <h2>1. Information We Do NOT Collect</h2>
+    <ul>
+        <li><strong>No Phone Numbers or Real Names:</strong> Chika uses anonymous cryptographic keys and random identifiers exchanged directly between users (e.g., via QR code).</li>
+        <li><strong>No Plaintext Messages or Media:</strong> All texts, voice notes, photos, and files are end-to-end encrypted on your device using the Signal Protocol (Double Ratchet + X3DH) and AES-256-GCM before transmission.</li>
+        <li><strong>No Encryption Keys:</strong> Master keys and cryptographic ratchet states are stored exclusively in your device's secure hardware enclave (Android Keystore / iOS Keychain). The developer has no access to your private keys.</li>
+    </ul>
+
+    <h2>2. Ephemeral Server Relay & Data Retention</h2>
+    <ul>
+        <li><strong>In-Transit Ciphertext:</strong> When sending encrypted messages to an offline recipient, our relay server temporarily queues the unreadable ciphertext envelope.</li>
+        <li><strong>Automated Instant Purge:</strong> As soon as the recipient device receives the message envelope and delivers an acknowledgment receipt (ACK), the envelope is <strong>permanently purged</strong> from server memory and databases.</li>
+    </ul>
+
+    <h2>3. Device Permissions & Biometric Security</h2>
+    <ul>
+        <li><strong>Biometric Authentication (Fingerprint / Face Unlock):</strong> Processed 100% locally on your device by the operating system's secure biometric framework. Biometric data never leaves your device.</li>
+        <li><strong>Camera Permission:</strong> Used exclusively on-device for scanning friend pairing QR codes and capturing photos you choose to send.</li>
+        <li><strong>Microphone Permission:</strong> Used solely on-device for recording encrypted voice notes that you choose to send.</li>
+    </ul>
+
+    <h2>4. Third-Party Services & Notifications</h2>
+    <p>Push notifications (via FCM / APNs) contain zero message body text and zero sender metadata to prevent third-party notification readers from intercepting your communication.</p>
+
+    <h2>5. Data Deletion & User Rights</h2>
+    <p>Because Chika does not store user accounts, phone numbers, or unencrypted data on servers, deleting the app from your device permanently purges all local cryptographic keys and chat history.</p>
+
+    <h2>6. Contact Developer</h2>
+    <p>If you have questions regarding this Privacy Policy, please contact:<br>
+    <strong>Email:</strong> <a href="mailto:chetan@chetan.co">chetan@chetan.co</a></p>
+</body>
+</html>
